@@ -1,0 +1,32 @@
+@mixin primaryfont($fontN: Oswald, $fontNSecondary: sans-serif, $fontS: 16px, $fontC: black, $fontW: normal) {
+    font-family: #{$fontN}+', '+#{$fontNSecondary};
+    font-size: $fontS;
+    color: $fontC;
+    font-weight: $fontW;
+}
+
+
+@mixin flexmodal($dflex: flex, $falign: center, $fjustify: center) {
+    display: $dflex;
+    align-items:$falign;
+    justify-content: $fjustify;
+}
+
+@mixin fonts($font:sans-serif, $size:20px, $color:#fff){
+    font-family: $font;
+    color: $color;
+    font-size:$size
+    // @include fonts(sans-serif, 20px, #fff);
+}
+
+@mixin margin($mgt:0px){
+    margin: $mgt;
+}
+
+@mixin padding($padt: 0px) {
+    padding: $padt;
+}
+
+@mixin borderradius($padt: 0px) {
+    border-radius: $padt;
+}

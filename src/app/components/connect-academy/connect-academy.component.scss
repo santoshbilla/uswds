@@ -1,0 +1,226 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins";
+
+header {
+  background-color: #dde8ea;
+  h1 {
+    color: $headercolor;
+  }
+}
+
+.academy-wrap {
+  @include margin(30px 0);
+}
+
+.image-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: $grey;
+  @include borderradius(5px);
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+  .image-box {
+    height: 450px;
+    img {
+      width: 100%;
+      object-fit: fill;
+      height: 450px;
+    }
+  }
+  .image-text {
+    @include padding(40px);
+    @include fonts(sans-serif, 22px, #000);
+    line-height: 35px;
+    h2 {
+      @include fonts(sans-serif, 25px, $headercolor);
+      @include margin(0 0 10px);
+    }
+  }
+}
+
+.profile-wrap {
+  background-color: $grey;
+  @include padding(30px);
+  @include borderradius(5px);
+  .profile-title {
+    @include flexmodal(flex, center, flex-start);
+    @include margin(0 0 40px);
+    &.mb-0 {
+      @include margin();
+    }
+    img {
+      padding-right: 30px;
+    }
+    h3 {
+      @include fonts(sans-serif, 20px, #000);
+    }
+  }
+
+  .profile-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    @media screen and (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+    .profile-info-inner {
+      background-color: $white;
+      border-radius: 5px;
+      @include padding(30px);
+      .info-box {
+        @include flexmodal(flex, start, flex-start);
+        @include fonts(sans-serif, 18px, #117f90);
+        line-height: 25px;
+        @include margin(0 0 20px);
+        span {
+          @include padding(0 10px 0 0);
+        }
+
+        a {
+          @include fonts(sans-serif, 18px, #117f90);
+          text-decoration: none;
+
+          &.color-text {
+            color: #117f90;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.profile-info-row {
+  margin-bottom: 20px;
+  span {
+    @include fonts(sans-serif, 18px, #000);
+    &.bold {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  }
+  &.flexmodaladd {
+    @include flexmodal(flex, start, space-between);
+    @media screen and (max-width: 1199px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.program-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 20px;
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr !important;
+  }
+  @include margin(20px 0 0);
+  p {
+    @include fonts(sans-serif, 22px, #000);
+    @include margin(0 0 25px);
+    font-weight: bold;
+  }
+  ul {
+    @include padding(0 0 0 25px);
+    @include margin(0);
+    li {
+      @include fonts(sans-serif, 18px, #000);
+      @include margin(0 0 10px);
+    }
+  }
+}
+
+.parent-info {
+  grid-template-columns: 1fr !important;
+  background-color: $white;
+  border-radius: 5px;
+  @include padding(30px);
+  .profile-info-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr !important;
+    @media screen and (max-width: 767px) {
+      grid-template-columns: 1fr !important;
+    }
+
+    .profile-info-row {
+      flex-direction: column !important;
+      display: flex;
+      .bold {
+        @include margin(0px 0 10px);
+      }
+    }
+  }
+}
+
+.descrp {
+  @include fonts(sans-serif, 18px, #000);
+  line-height: 30px;
+  @include margin(20px 0);
+}
+
+.four-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr !important;
+  gap: 20px;
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 1fr !important;
+  }
+  @include margin(20px 0 0);
+  h4 {
+    border-bottom: 1px solid #f2f2f2;
+    @include fonts(sans-serif, 26px, #000);
+    @include padding(0 0 10px);
+    @include margin(0 0 10px);
+  }
+  h3 {
+    @include fonts(sans-serif, 26px, #000);
+    font-weight: 800;
+  }
+  p {
+    @include fonts(sans-serif, 16px, #000);
+    @include margin(10px 0);
+    line-height: 20px;
+  }
+}
+
+.two-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 20px;
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 1fr !important;
+  }
+  @include margin(20px 0 0);
+  h4 {
+    border-bottom: 1px solid #f2f2f2;
+    @include fonts(sans-serif, 26px, #000);
+    @include padding(0 0 10px);
+    @include margin(0 0 10px);
+  }
+  h3 {
+    @include fonts(sans-serif, 26px, #000);
+    font-weight: 800;
+  }
+  p {
+    @include fonts(sans-serif, 16px, #000);
+    @include margin(10px 0);
+    line-height: 20px;
+  }
+}
+
+.drop-box {
+  color: #fff;
+  border: 4px solid $headercolor !important;
+
+  @include margin(25px 0);
+  select {
+    width: 100%;
+    height: 100%;
+    background-color: $grey;
+    @include padding(25px 15px);
+    border: none;
+    @include borderradius(5px);
+    @include fonts(sans-serif, 26px, #000);
+  }
+}

@@ -1,0 +1,55 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+
+body, *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.self-container{
+    width: 100%;
+    padding: 0px 20px;
+    margin: 0px auto;
+}
+
+header {
+    background-color: $headercolor;
+    padding: 20px 0px;
+    color: $white;
+
+    h1 {
+        text-transform: uppercase;
+        @include fonts(sans-serif, 20px, #fff);
+    }
+}
+
+.card-box {
+    background-color: #1d467e;
+    color: $white;
+    @include borderradius(10px);
+    @include padding(25px 15px);
+    @include margin(25px 0 0);
+
+    h3 {
+        @include fonts(sans-serif, 20px, #fff);
+
+        @media screen and (max-width:767px) {
+            font-size: 18px;
+        }
+    }
+
+    &.bg-white{
+        background-color: #fff;
+        a {
+                @include fonts(sans-serif, 20px, $headercolor);
+        
+                @media screen and (max-width:767px) {
+                    font-size: 18px;
+                }
+            }
+    }
+}
+
